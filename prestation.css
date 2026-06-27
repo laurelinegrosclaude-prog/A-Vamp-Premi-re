@@ -1,162 +1,128 @@
-*{
+* {
     margin: 0;
-    padding-bottom: 0px;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body { 
+body {
     background-color: #f6f8f7;
-}
-
-/*header*/
-ul {
-  font-family: "Playfair Display", serif;
-  font-style: 600;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 10px;
-  font-size: larger;
-  list-style: none;
+    overflow-x: hidden;
 }
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #de754d;
-  color: #ece6d0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #de754d;
+    color: #eccebd;
+    width: 100%;
 }
 
-a {
-    color: #ece6d0;
-    text-decoration: none;
-}
-
-h1 {
-    font-family: "Playfair Display", serif;
-    font-style: 600;
+/* LOGO */
+.logo {
     display: flex;
     justify-content: center;
-    color: #ece6d0;
-    margin-bottom: 10px;
+    padding: 20px;
+}
+
+/* MENU */
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
 }
 
 li {
-   font-family: "Playfair Display", serif;
-   font-style: 600;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   padding: 10px;
-   font-size: larger;
+    font-family: "Playfair Display", serif;
+    padding: 10px;
+    font-size: larger;
+}
+
+a {
+    color: #eccebd;
+    text-decoration: none;
 }
 
 a:hover {
     color: #f6f8f7;
 }
-/*F header*/
 
-/* Le bloc qui contient l'image */
-.section-image {
-    position: relative;
-    width: 100%;
+/* SECTION */
+.prestations {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+    color: #7a6f5a; /* ✅ couleur comme ton rendu */
 }
 
-/* L'image */
-.section-image img {
-    width: 100%;
+.prestations h2 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.prestations h3 {
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+.prestations ul {
     display: block;
+    margin-top: 10px;
 }
 
-/* Le bloc des prestations SUR l'image */
-.liste-prestations {
-    position: absolute;
-    left: 50%;              /* centre horizontal */
-    transform: translate(-50%, -103%);
-    width: 80%;
-    padding: 30px;
-    border-radius: 12px;
-    color: #ece6d0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    text-align: center;
+.prestations li {
+    font-size: 20px;
+    padding: 5px 0;
 }
 
-.liste-prestations ul {
-    display: flex;
-    flex-direction: column;
-}
-
-.liste-prestations h2 {
-    font-size: 60px;
-    text-align: center;
-    margin: 20px;
-}
-
-h3 {
-    font-size: 30px;
-    text-align: center;
-    margin: 20px;
-}
-
-/*Footer*/
+/* FOOTER */
 footer {
     background-color: #de754d;
 }
 
-h2 {
-    color:#ece6d0 ; 
-    font-family: "Playfair Display", serif;
-    font-style: 600; 
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-div {
+footer div {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    padding: 15px;
 }
 
-.logo {
-    display: flex;
-    justify-content: center; 
-    padding-top: 20px;
-    padding-bottom: 20px;  
+footer h1, footer h2 {
+    color: #eccebd;
 }
-/*F footer*/
 
-/*100 → Thin
-200 → Extra Light (Ultra Light)
-300 → Light
-400 → Normal (Regular)
-500 → Medium
-600 → Semi-Bold (équivalent de semibold) 
-700 → Bold
-800 → Extra Bold (Ultra Bold)
-900 → Black (Heavy)*/
-
-/* Tablette */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .box {
-    width: 50%;
-  }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prestations h2 {
+        font-size: 30px;
+    }
+
+    .prestations h3 {
+        font-size: 20px;
+    }
+
+    .prestations li {
+        font-size: 16px;
+    }
+
+    footer div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
 }
-
-/* Téléphone */
-@media (max-width: 480px) {
-  .box {
-    width: 100%;
-  }
-}
-
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-

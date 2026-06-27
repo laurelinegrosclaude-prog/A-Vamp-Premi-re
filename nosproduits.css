@@ -1,144 +1,150 @@
-*{
+* {
     margin: 0;
     padding-bottom: 0px;
     box-sizing: border-box;
 }
 
-body { 
+body {
     background-color: #f6f8f7;
 }
 
-/*header*/
+/* ===== HEADER ===== */
+
 ul {
-  font-family: "Playfair Display", serif;
-  font-style: 600;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 10px;
-  font-size: larger;
-  list-style: none;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #de754d;
-  color: #ece6d0;
-}
-
-a {
-    color: #ece6d0;
-    text-decoration: none;
-}
-
-h1 {
     font-family: "Playfair Display", serif;
-    font-style: 600;
-    display: flex;
-    justify-content: center;
-    color: #ece6d0;
-    margin-bottom: 10px;
-}
-
-li {
-   font-family: "Playfair Display", serif;
-   font-style: 600;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   padding: 10px;
-   font-size: larger;
-}
-
-a:hover {
-    color: #f6f8f7;
-}
-/*F header*/
-
-h4 {
-  font-family: "Playfair Display", serif;
-  color: #de754d;
-  font-size: 50px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 20px;
-}
-
-h3 {
-  font-family: "Playfair Display", serif;
-  color: #de754d;
-  font-size: 30px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  margin-left: 50px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  margin: 20px;
-  display: flex;
-  align-content: stretch; 
-  flex-direction: row;
-}
-
-.visuelproduit {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/*Footer*/
-footer {
-    background-color: #de754d;
-}
-
-h2 {
-    color:#ece6d0 ; 
-    font-family: "Playfair Display", serif;
-    font-style: 600; 
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 10px;
+    font-size: larger;
+    list-style: none;
 }
 
-.logo {
+header {
     display: flex;
-    justify-content: center; 
-    padding-top: 20px;
-    padding-bottom: 20px;  
-}
-/*F footer*/
-
-/*100 → Thin
-200 → Extra Light (Ultra Light)
-300 → Light
-400 → Normal (Regular)
-500 → Medium
-600 → Semi-Bold (équivalent de semibold) 
-700 → Bold
-800 → Extra Bold (Ultra Bold)
-900 → Black (Heavy)*/
-
-/* Tablette */
-@media (max-width: 768px) {
-  .box {
-    width: 50%;
-  }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #de754d;
+    color: #eccebd;
 }
 
-/* Téléphone */
-@media (max-width: 480px) {
-  .box {
+a {
+    color: #eccebd;
+    text-decoration: none;
+}
+
+li {
+    font-family: "Playfair Display", serif;
+    padding: 10px;
+}
+
+/* ===== TITRES ===== */
+
+h4 {
+    font-family: "Playfair Display", serif;
+    color: #de754d;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+
+h3 {
+    font-family: "Playfair Display", serif;
+    color: #de754d;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+
+/* ===== PRODUITS ===== */
+
+.visuelproduit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.visuelproduit div {
+    display: flex;
+    justify-content: center; /* ✅ centre les colonnes */
+    gap: 40px; /* ✅ espace entre produits */
+    margin-bottom: 40px;
+}
+
+/* ✅ images */
+.visuelproduit img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background-color: #de754d;
     width: 100%;
-  }
+}
+
+footer div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+footer h1,
+footer h2 {
+    color: #eccebd;
+    font-family: "Playfair Display", serif;
+}
+
+/* ========================= */
+/* ✅ RESPONSIVE MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    /* MENU */
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .visuelproduit div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+
+        width: 100%;
+        padding: 0 10px;
+
+        margin-bottom: 25px;
+        align-items: center;
+    }
+
+
+    /* ✅ TRÈS IMPORTANT */
+    .visuelproduit img {
+        width: 100%;
+        height: auto;
+
+        margin: 0; /* ✅ enlève les 20px qui cassent TOUT */
+        display: block;
+    }
+
+    /* FOOTER */
+    footer div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
 }

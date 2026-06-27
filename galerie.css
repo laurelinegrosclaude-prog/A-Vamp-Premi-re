@@ -1,119 +1,135 @@
-*{
+* {
     margin: 0;
-    padding-bottom: 0px;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body { 
-    background-color: #f6f8f7;
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/*header*/
-ul {
-  font-family: "Playfair Display", serif;
-  font-style: 600;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 10px;
-  font-size: larger;
-  list-style: none;
+body {
+    background-color: #f6f8f7;
+    overflow-x: hidden;
 }
+
+/* ===== HEADER ===== */
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #de754d;
-  color: #ece6d0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #de754d;
+    color: #eccebd;
+    width: 100%;
 }
 
-a {
-    color: #ece6d0;
-    text-decoration: none;
-}
-
-h1 {
-    font-family: "Playfair Display", serif;
-    font-style: 600;
+/* LOGO */
+.logo {
     display: flex;
     justify-content: center;
-    color: #ece6d0;
+    padding: 20px;
+}
+
+/* MENU */
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
 }
 
 li {
-   font-family: "Playfair Display", serif;
-   font-style: 600;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
-   padding: 10px;
-   font-size: larger;
+    font-family: "Playfair Display", serif;
+    padding: 10px;
+    font-size: larger;
+}
+
+a {
+    color: #eccebd;
+    text-decoration: none;
 }
 
 a:hover {
     color: #f6f8f7;
 }
-/*F header*/
 
-img {
-    padding-bottom: 100px;
-    padding-top: 100px;
+/* ===== IMAGE GALERIE ===== */
+
+section {
+    width: 100%;
+    margin-bottom: 120px;
 }
 
-/*Footer*/
+/* ✅ IMPORTANT : pas de flex ici */
+.image-container {
+    width: 100%;
+}
+
+/* ✅ IMAGE PLEINE LARGEUR */
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== FOOTER ===== */
+
 footer {
     background-color: #de754d;
-}
-
-h2 {
-    color:#ece6d0 ; 
-    font-family: "Playfair Display", serif;
-    font-style: 600; 
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.logo {
-    display: flex;
-    justify-content: center; 
-    padding-top: 20px;
-    padding-bottom: 20px;  
-}
-/*F footer*/
-
-/*100 → Thin
-200 → Extra Light (Ultra Light)
-300 → Light
-400 → Normal (Regular)
-500 → Medium
-600 → Semi-Bold (équivalent de semibold) 
-700 → Bold
-800 → Extra Bold (Ultra Bold)
-900 → Black (Heavy)*/
-
-/* Tablette */
-@media (max-width: 768px) {
-  .box {
-    width: 50%;
-  }
-}
-
-/* Téléphone */
-@media (max-width: 480px) {
-  .box {
     width: 100%;
-  }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+footer div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+footer h1,
+footer h2 {
+    color: #eccebd;
+    font-family: "Playfair Display", serif;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    /* MENU */
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li {
+        padding: 5px;
+    }
+
+    /* ESPACE */
+    section {
+        margin-bottom: 40px;
+    }
+
+    /* IMAGE */
+    .image-container img {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    footer div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
 }
