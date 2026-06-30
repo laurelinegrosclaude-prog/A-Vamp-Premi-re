@@ -1,47 +1,62 @@
-* {
+*{
     margin: 0;
-    padding-bottom: 0px;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     background-color: #f6f8f7;
+    overflow-x: hidden;
 }
 
-/* ===== HEADER ===== */
+/* ===================== */
+/* HEADER */
+/* ===================== */
 
-ul {
-    font-family: "Playfair Display", serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-    font-size: larger;
-    list-style: none;
-}
-
-header {
+header{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #de754d;
     color: #eccebd;
+    width: 100%;
 }
 
-a {
+.logo{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+li{
+    font-family: "Playfair Display", serif;
+    padding: 10px;
+    font-size: larger;
+}
+
+a{
     color: #eccebd;
     text-decoration: none;
 }
 
-li {
-    font-family: "Playfair Display", serif;
-    padding: 10px;
+a:hover{
+    color: #f6f8f7;
 }
 
-/* ===== TITRES ===== */
+/* ===================== */
+/* TITRES */
+/* ===================== */
 
-h4 {
+h4{
     font-family: "Playfair Display", serif;
     color: #de754d;
     font-size: 50px;
@@ -50,7 +65,7 @@ h4 {
     margin-left: 20px;
 }
 
-h3 {
+h3{
     font-family: "Playfair Display", serif;
     color: #de754d;
     font-size: 30px;
@@ -59,36 +74,42 @@ h3 {
     margin-left: 50px;
 }
 
-/* ===== PRODUITS ===== */
+/* ===================== */
+/* PRODUITS */
+/* ===================== */
+
+/* Chaque ligne de 4 produits*/ 
+.visuelproduit div{
+    display: flex;
+    float: none;
+    justify-content: center;
+    gap: 40px;
+}
 
 .visuelproduit {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;         /* allows multiple rows */
+    justify-content: center; /* centers rows */
+    gap: 40px;
 }
-
-.visuelproduit div {
-    display: flex;
-    justify-content: center; /* ✅ centre les colonnes */
-    gap: 40px; /* ✅ espace entre produits */
-    margin-bottom: 40px;
-}
-
-/* ✅ images */
+ 
 .visuelproduit img {
-    max-width: 100%;
+    max-width: 100px;
     height: auto;
-    margin: 20px;
+    display: block;
+    float: none;
+    width: calc((100% - 120px) / 4);
 }
+/* ===================== */
+/* FOOTER */
+/* ===================== */
 
-/* ===== FOOTER ===== */
-
-footer {
+footer{
     background-color: #de754d;
     width: 100%;
 }
 
-footer div {
+footer div{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -96,53 +117,63 @@ footer div {
 }
 
 footer h1,
-footer h2 {
+footer h2{
     color: #eccebd;
     font-family: "Playfair Display", serif;
 }
 
-/* ========================= */
-/* ✅ RESPONSIVE MOBILE */
-/* ========================= */
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
-    /* MENU */
-    ul {
+    /* HEADER */
+
+    ul{
         flex-direction: column;
         align-items: center;
     }
 
-    .visuelproduit div {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 15px;
-
-        width: 100%;
-        padding: 0 10px;
-
-        margin-bottom: 25px;
-        align-items: center;
+    li{
+        padding: 5px;
     }
 
+    /* PRODUITS */
 
-    /* ✅ TRÈS IMPORTANT */
-    .visuelproduit img {
-        width: 100%;
+    .visuelproduit div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+
+    .visuelproduit img{
+        max-width: 140px;
         height: auto;
+    }
 
-        margin: 0; /* ✅ enlève les 20px qui cassent TOUT */
-        display: block;
+    h4{
+        font-size: 35px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    h3{
+        font-size: 24px;
+        text-align: center;
+        margin-left: 0;
     }
 
     /* FOOTER */
-    footer div {
+
+    footer div{
         flex-direction: column;
         text-align: center;
     }
 
-    .logo {
+    .logo{
         flex-direction: row;
         justify-content: center;
         gap: 20px;
